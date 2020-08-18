@@ -1,4 +1,6 @@
 # Poker Game, #
-##The open-souce Poker.##
+The open-source Poker.
+
+Actual version : 1.0.1
 
 ```I AM CODING DAD```
