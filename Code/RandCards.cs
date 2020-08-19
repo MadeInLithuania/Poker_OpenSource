@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -43,10 +44,10 @@ namespace Poker
             new Cartes() { Valeur  = 8, Nom = "8 de coeur", Image =Environment.CurrentDirectory + "\\img\\8H.png"},
             new Cartes() { Valeur  = 9, Nom = "9 de coeur", Image =Environment.CurrentDirectory + "\\img\\9H.png"},
             new Cartes() { Valeur  = 10, Nom = "10 de coeur", Image =Environment.CurrentDirectory + "\\img\\10H.png"},
-            new Cartes() { Valeur  = 10, Nom = "Valet de coeur", Image = Environment.CurrentDirectory +"\\img\\JH.png" },
-            new Cartes() { Valeur  = 10, Nom = "Reine de coeur", Image = Environment.CurrentDirectory + "\\img\\QH.png" },
-            new Cartes() { Valeur  = 10, Nom = "Roi de coeur", Image = Environment.CurrentDirectory + "\\img\\KH.png" },
-            new Cartes() { Valeur  = 11, Nom = "As de coeur", Image = Environment.CurrentDirectory + "\\img\\AH.png" },
+            new Cartes() { Valeur  = 11, Nom = "Valet de coeur", Image = Environment.CurrentDirectory +"\\img\\JH.png" },
+            new Cartes() { Valeur  = 12, Nom = "Reine de coeur", Image = Environment.CurrentDirectory + "\\img\\QH.png" },
+            new Cartes() { Valeur  = 13, Nom = "Roi de coeur", Image = Environment.CurrentDirectory + "\\img\\KH.png" },
+            new Cartes() { Valeur  = 14, Nom = "As de coeur", Image = Environment.CurrentDirectory + "\\img\\AH.png" },
 
             #endregion
 
@@ -61,10 +62,10 @@ namespace Poker
             new Cartes() { Valeur  = 8, Nom = "8 de trèfle", Image = Environment.CurrentDirectory +"\\img\\8C.png" },
             new Cartes() { Valeur  = 9, Nom = "9 de trèfle", Image = Environment.CurrentDirectory + "\\img\\9C.png" },
             new Cartes() { Valeur  = 10, Nom = "10 de trèfle", Image = Environment.CurrentDirectory + "\\img\\10C.png" },
-            new Cartes() { Valeur  = 10, Nom = "Valet de trèfle", Image = Environment.CurrentDirectory + "\\img\\JC.png" },
-            new Cartes() { Valeur  = 10, Nom = "Reine de trèfle", Image = Environment.CurrentDirectory + "\\img\\QC.png" },
-            new Cartes() { Valeur  = 10, Nom = "Roi de trèfle", Image = Environment.CurrentDirectory + "\\img\\KC.png" },
-            new Cartes() { Valeur  = 11, Nom = "As de trèfle", Image = Environment.CurrentDirectory + "\\img\\AC.png" },
+            new Cartes() { Valeur  = 11, Nom = "Valet de trèfle", Image = Environment.CurrentDirectory + "\\img\\JC.png" },
+            new Cartes() { Valeur  = 12, Nom = "Reine de trèfle", Image = Environment.CurrentDirectory + "\\img\\QC.png" },
+            new Cartes() { Valeur  = 13, Nom = "Roi de trèfle", Image = Environment.CurrentDirectory + "\\img\\KC.png" },
+            new Cartes() { Valeur  = 14, Nom = "As de trèfle", Image = Environment.CurrentDirectory + "\\img\\AC.png" },
 
             #endregion
 
@@ -79,10 +80,10 @@ namespace Poker
             new Cartes() { Valeur  = 7, Nom = "8 de carreaux", Image = Environment.CurrentDirectory + "\\img\\8D.png" },
             new Cartes() { Valeur  = 9, Nom = "9 de carreaux", Image = Environment.CurrentDirectory + "\\img\\9D.png" },
             new Cartes() { Valeur  = 10, Nom = "10 de carreaux", Image = Environment.CurrentDirectory + "\\img\\10D.png" },
-            new Cartes() { Valeur  = 10, Nom = "Valet de carreaux", Image = Environment.CurrentDirectory + "\\img\\JD.png" },
-            new Cartes() { Valeur  = 10, Nom = "Reine de carreaux", Image = Environment.CurrentDirectory + "\\img\\QD.png" },
-            new Cartes() { Valeur  = 10, Nom = "Roi de carreaux", Image = Environment.CurrentDirectory + "\\img\\KD.png" },
-            new Cartes() { Valeur  = 11, Nom = "As de carreaux", Image = Environment.CurrentDirectory + "\\img\\AD.png" },
+            new Cartes() { Valeur  = 11, Nom = "Valet de carreaux", Image = Environment.CurrentDirectory + "\\img\\JD.png" },
+            new Cartes() { Valeur  = 12, Nom = "Reine de carreaux", Image = Environment.CurrentDirectory + "\\img\\QD.png" },
+            new Cartes() { Valeur  = 13, Nom = "Roi de carreaux", Image = Environment.CurrentDirectory + "\\img\\KD.png" },
+            new Cartes() { Valeur  = 14, Nom = "As de carreaux", Image = Environment.CurrentDirectory + "\\img\\AD.png" },
 
             #endregion
 
@@ -97,10 +98,10 @@ namespace Poker
             new Cartes() { Valeur  = 8, Nom = "8 de piques", Image = Environment.CurrentDirectory + "\\img\\8S.png" },
             new Cartes() { Valeur  = 9, Nom = "9 de piques", Image = Environment.CurrentDirectory + "\\img\\9S.png" },
             new Cartes() { Valeur  = 10, Nom = "10 de piques", Image = Environment.CurrentDirectory + "\\img\\10S.png" },
-            new Cartes() { Valeur  = 10, Nom = "Valet de piques", Image = Environment.CurrentDirectory + "\\img\\JS.png" },
-            new Cartes() { Valeur  = 10, Nom = "Reine de piques", Image = Environment.CurrentDirectory + "\\img\\QS.png" },
-            new Cartes() { Valeur  = 10, Nom = "Roi de piques", Image = Environment.CurrentDirectory + "\\img\\KS.png" },
-            new Cartes() { Valeur  = 11, Nom = "As de piques", Image = Environment.CurrentDirectory + "\\img\\AD.png" },
+            new Cartes() { Valeur  = 11, Nom = "Valet de piques", Image = Environment.CurrentDirectory + "\\img\\JS.png" },
+            new Cartes() { Valeur  = 12, Nom = "Reine de piques", Image = Environment.CurrentDirectory + "\\img\\QS.png" },
+            new Cartes() { Valeur  = 13, Nom = "Roi de piques", Image = Environment.CurrentDirectory + "\\img\\KS.png" },
+            new Cartes() { Valeur  = 14, Nom = "As de piques", Image = Environment.CurrentDirectory + "\\img\\AD.png" },
             #endregion
         };
         #endregion
@@ -112,48 +113,270 @@ namespace Poker
             return carteAlea;
         }
 
-        public void GenCarteJoueur()
+
+        public void GenCartesAdv()
         {
-            int CarteAlea1 = CarteAleatoire();
-            Cartes carte1 = jeu[CarteAlea1];
-            CartesUtilisees.Add(CarteAlea1);
-            int CarteAlea2 = CarteAleatoire();
+            int Carte = CarteAleatoire();
+            Cartes carte = jeu[Carte];
+            CartesUtilisees.Add(Carte);
 
-            while (CartesUtilisees.Contains(CarteAlea2))
+            while (CartesUtilisees.Contains(Carte))
             {
-                CarteAlea2 = CarteAleatoire();
+                Carte = CarteAleatoire();
             }
-            CarteAlea2 = 1 * CarteAlea2;
+            Carte = 1 * Carte;
 
-            ListeCartes.Add(carte1);
+            ListeCartes.Add(carte);
 
-            if (Distrib)
+            if (Distrib && distj1)
             {
                 if (SecondDistr == false)
                 {
-                    pictureBoxJoueur1.ImageLocation = carte1.Image;
+                    pictureBoxJoueur1.ImageLocation = carte.Image;
                 }
 
                 else
                 {
-                    Cartes carte2 = jeu[CarteAlea2];
-                    CartesUtilisees.Add(CarteAlea2);
+                    Cartes carte2 = jeu[Carte];
+                    CartesUtilisees.Add(Carte);
                     ListeCartes.Add(carte2);
                     pictureBoxJoueur2.ImageLocation = carte2.Image;
                 }
             }
 
-            /*pictureBoxJoueur1.ImageLocation = carte1.Image;
-            pictureBoxJoueur2.ImageLocation = carte2.Image;*/
+            #region Adversaire 1
+            Carte = CarteAleatoire();
+            Cartes carteA1 = jeu[Carte];
+            CartesUtilisees.Add(Carte);
 
+            while (CartesUtilisees.Contains(Carte))
+            {
+                Carte = CarteAleatoire();
+            }
+            Carte = 1 * Carte;
+            ListeCartes.Add(carteA1);
+
+            if (Distrib && dist1_1)
+            {
+                if (SecondDistr == false)
+                {
+                    pictureBoxAdv1_1.ImageLocation = carteA1.Image;
+                }
+
+                else
+                {
+                    Cartes carteA1_2 = jeu[Carte];
+                    CartesUtilisees.Add(Carte);
+                    ListeCartes.Add(carteA1_2);
+                    pictureBoxAdv1_2.ImageLocation = carteA1_2.Image;
+                }
+            }
+            #endregion
+
+            #region Adversaire 2
+            Carte = CarteAleatoire();
+            Cartes carteA2 = jeu[Carte];
+            CartesUtilisees.Add(Carte);
+
+            while (CartesUtilisees.Contains(Carte))
+            {
+                Carte= CarteAleatoire();
+            }
+            Carte = 1 * Carte;
+
+            ListeCartes.Add(carteA2);
+
+            if (Distrib && dist2_1)
+            {
+                if (SecondDistr == false)
+                {
+                    pictureBoxAdv2_1.ImageLocation = carteA2.Image;
+                }
+
+                else
+                {
+                    Cartes carteA2_2 = jeu[Carte];
+                    CartesUtilisees.Add(Carte);
+                    ListeCartes.Add(carteA2_2);
+                    pictureBoxAdv2_2.ImageLocation = carteA2_2.Image;
+                }
+            }
+            #endregion
+
+            #region Adversaire 3
+            Carte = CarteAleatoire();
+            Cartes carteA3 = jeu[Carte];
+            CartesUtilisees.Add(Carte);
+
+            while (CartesUtilisees.Contains(Carte))
+            {
+                Carte = CarteAleatoire();
+            }
+            Carte = 1 * Carte;
+
+            if (Distrib && dist3_1)
+            {
+                if (SecondDistr == false)
+                {
+                    pictureBoxAdv3_1.ImageLocation = carteA3.Image;
+                }
+
+                else
+                {
+                    Cartes carteA3_2 = jeu[Carte];
+                    CartesUtilisees.Add(Carte);
+                    ListeCartes.Add(carteA3_2);
+                    pictureBoxAdv3_2.ImageLocation = carteA3_2.Image;
+                }
+            }
+            #endregion
+            #region Adversaire 4
+            Carte = CarteAleatoire();
+            Cartes carteA4 = jeu[Carte];
+            CartesUtilisees.Add(Carte);
+
+            while (CartesUtilisees.Contains(Carte))
+            {
+                Carte = CarteAleatoire();
+            }
+            Carte = 1 * Carte;
+            ListeCartes.Add(carteA4);
+
+            if (Distrib && dist4_1)
+            {
+                if (SecondDistr == false)
+                {
+                    pictureBoxAdv4_1.ImageLocation = carteA4.Image;
+                }
+
+                else
+                {
+                    Cartes carteA4_2 = jeu[Carte];
+                    CartesUtilisees.Add(Carte);
+                    ListeCartes.Add(carteA4_2);
+                    pictureBoxAdv4_2.ImageLocation = carteA4_2.Image;
+                }
+
+            }
+            #endregion
+            #region Adversaire 5
+            Carte = CarteAleatoire();
+            Cartes carteA5 = jeu[Carte];
+            CartesUtilisees.Add(Carte);
+
+            while (CartesUtilisees.Contains(Carte))
+            {
+                Carte= CarteAleatoire();
+            }
+            Carte = 1 * Carte;
+            ListeCartes.Add(carteA5);
+
+            if (Distrib && dist5_1)
+            {
+                if (SecondDistr == false)
+                {
+                    pictureBoxAdv5_1.ImageLocation = carteA5.Image;
+                }
+
+                else
+                {
+                    Cartes carteA5_2 = jeu[Carte];
+                    CartesUtilisees.Add(Carte);
+                    ListeCartes.Add(carteA5_2);
+                    pictureBoxAdv5_2.ImageLocation = carteA5_2.Image;
+                }
+                #endregion
+            }
+            #region Adversaire 6
+            Carte= CarteAleatoire();
+            Cartes carteA6 = jeu[Carte];
+            CartesUtilisees.Add(Carte);
+
+            while (CartesUtilisees.Contains(Carte))
+            {
+                Carte = CarteAleatoire();
+            }
+            Carte = 1 * Carte;
+            
+            ListeCartes.Add(carteA6);
+
+            if (Distrib && dist6_1)
+            {
+                if(SecondDistr == false)
+                {
+                    pictureBoxAdv6_1.ImageLocation = carteA6.Image;
+                }
+
+                else
+                {
+                    Cartes carteA6_2 = jeu[Carte];
+                    CartesUtilisees.Add(Carte);
+                    ListeCartes.Add(carteA6_2);
+                    pictureBoxAdv6_2.ImageLocation = carteA6_2.Image;
+                }                
+            }
+            #endregion
+
+            #region Adversaire 7
+            Carte = CarteAleatoire();
+            Cartes carteA7 = jeu[Carte];
+            CartesUtilisees.Add(Carte);
+
+            while (CartesUtilisees.Contains(Carte))
+            {
+                Carte = CarteAleatoire();
+            }
+            Carte = 1 * Carte;
+            ListeCartes.Add(carteA7); ;
+
+            if (Distrib && dist7_1)
+            {
+                if (SecondDistr == false)
+                {
+                    pictureBoxAdv7_1.ImageLocation = carteA7.Image;
+                }
+
+                else
+                {
+                    Cartes carteA7_2 = jeu[Carte];
+                    CartesUtilisees.Add(Carte);
+                    ListeCartes.Add(carteA7_2);
+                    pictureBoxAdv7_2.ImageLocation = carteA7_2.Image;
+                }
+            }
+            #endregion
+            #region Adversaire 8
+            Carte = CarteAleatoire();
+            Cartes carteA8 = jeu[Carte];
+            CartesUtilisees.Add(Carte);
+
+            while (CartesUtilisees.Contains(Carte))
+            {
+                Carte = CarteAleatoire();
+            }
+            Carte = 1 * Carte;
+            ListeCartes.Add(carteA8);
+
+            if (Distrib && dist8_1)
+            {
+                if (SecondDistr == false)
+                {
+                    pictureBoxAdv8_1.ImageLocation = carteA8.Image;
+                }
+
+                else
+                {
+                    Cartes carteA8_2 = jeu[Carte];
+                    CartesUtilisees.Add(Carte);
+                    ListeCartes.Add(carteA8_2);
+                    pictureBoxAdv8_2.ImageLocation = carteA8_2.Image;
+                }
+            }
+           
+            #endregion
         }
 
-        public void GenCartes()
-        {
-            GenCarteJoueur();
-        }
-
-        public void GenCartesAdv()
+        public void DebugDistr()
         {
             #region Adversaire 1
             int CarteAleaA1 = CarteAleatoire();
@@ -314,12 +537,12 @@ namespace Poker
                 CarteAleaA6_2 = CarteAleatoire();
             }
             CarteAleaA6_2 = 1 * CarteAleaA6_2;
-            
+
             ListeCartes.Add(carteA6);
 
             if (Distrib && dist6_1)
             {
-                if(SecondDistr == false)
+                if (SecondDistr == false)
                 {
                     pictureBoxAdv6_1.ImageLocation = carteA6.Image;
                 }
@@ -330,7 +553,7 @@ namespace Poker
                     CartesUtilisees.Add(CarteAleaA6_2);
                     ListeCartes.Add(carteA6_2);
                     pictureBoxAdv6_2.ImageLocation = carteA6_2.Image;
-                }                
+                }
             }
             #endregion
 
