@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E35E320A-59DC-4725-B803-3779D8D7FB35}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Poker</RootNamespace>
+    <AssemblyName>Poker</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>loho.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Code\class\Cartes.cs" />
+    <Compile Include="Code\Animate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Code\class\CardClass.cs" />
+    <Compile Include="Code\class\ClassJetons.cs" />
+    <Compile Include="Code\CurrentPlaying.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Code\Decisions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Code\GiveCards.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Code\Jetons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Code\Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Code\LoadMusic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Code\RandCards.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Code\RandomNames.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Code\Rounds.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config.Designer.cs">
+      <DependentUpon>Config.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Play.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Play.Designer.cs">
+      <DependentUpon>Play.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadForm.Designer.cs">
+      <DependentUpon>LoadForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Config.resx">
+      <DependentUpon>Config.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Play.resx">
+      <DependentUpon>Play.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadForm.aa.resx">
+      <DependentUpon>LoadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadForm.resx">
+      <DependentUpon>LoadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadForm.zu-ZA.resx">
+      <DependentUpon>LoadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="AppStarting.ani" />
+    <None Include="bin\Debug\cursors\Numix Cursors\Numix Dark x2\AppStarting.ani" />
+    <None Include="bin\Debug\cursors\Numix Cursors\Numix Dark x2\Wait.ani" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 et x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ade3669955.jpg" />
+    <Content Include="NO.cur" />
+    <None Include="bin\Debug\img\Cartes\Arrieres\petit\deck_1.png" />
+    <None Include="bin\Debug\img\Cartes\Arrieres\petit\deck_2.png" />
+    <None Include="bin\Debug\img\Cartes\Arrieres\petit\deck_3.png" />
+    <None Include="bin\Debug\img\Cartes\Arrieres\petit\deck_4.png" />
+    <None Include="bin\Debug\img\Cartes\Arrieres\petit\deck_5.png" />
+    <None Include="bin\Debug\img\Cartes\Arrieres\petit\deck_6.png" />
+    <None Include="bin\Debug\img\Jetons\chip_biege_flat.png" />
+    <None Include="bin\Debug\img\Jetons\chip_biege_top.png" />
+    <None Include="bin\Debug\img\Jetons\chip_black_flat.png" />
+    <None Include="bin\Debug\img\Jetons\chip_black_top.png" />
+    <None Include="bin\Debug\img\Jetons\chip_blue_flat.png" />
+    <None Include="bin\Debug\img\Jetons\chip_blue_top.png" />
+    <None Include="bin\Debug\img\Jetons\chip_gray_flat.png" />
+    <None Include="bin\Debug\img\Jetons\chip_gray_top.png" />
+    <None Include="bin\Debug\img\Jetons\chip_green_flat.png" />
+    <None Include="bin\Debug\img\Jetons\chip_green_top.png" />
+    <None Include="bin\Debug\img\Jetons\chip_lightblue_flat.png" />
+    <None Include="bin\Debug\img\Jetons\chip_lightblue_top.png" />
+    <None Include="bin\Debug\img\Jetons\chip_pink_flat.png" />
+    <None Include="bin\Debug\img\Jetons\chip_pink_top.png" />
+    <None Include="bin\Debug\img\Jetons\chip_purple_flat.png" />
+    <None Include="bin\Debug\img\Jetons\chip_purple_top.png" />
+    <None Include="bin\Debug\img\Jetons\chip_red_flat.png" />
+    <None Include="bin\Debug\img\Jetons\chip_red_top.png" />
+    <None Include="bin\Debug\img\Jetons\chip_white_flat.png" />
+    <None Include="bin\Debug\img\Jetons\chip_white_top.png" />
+    <None Include="bin\Debug\img\Jetons\chip_yellow_flat.png" />
+    <None Include="bin\Debug\img\Jetons\chip_yellow_top.png" />
+    <None Include="bin\Debug\sfx\button.wav" />
+    <None Include="bin\Debug\sfx\cardFan1.wav" />
+    <None Include="bin\Debug\sfx\cardFan2.wav" />
+    <None Include="bin\Debug\sfx\cardOpenPackage1.wav" />
+    <None Include="bin\Debug\sfx\cardOpenPackage2.wav" />
+    <None Include="bin\Debug\sfx\cardPlace1.wav" />
+    <None Include="bin\Debug\sfx\cardPlace2.wav" />
+    <None Include="bin\Debug\sfx\cardPlace3.wav" />
+    <None Include="bin\Debug\sfx\cardPlace4.wav" />
+    <None Include="bin\Debug\sfx\cardShove1.wav" />
+    <None Include="bin\Debug\sfx\cardShove2.wav" />
+    <None Include="bin\Debug\sfx\cardShove3.wav" />
+    <None Include="bin\Debug\sfx\cardShove4.wav" />
+    <None Include="bin\Debug\sfx\cardShuffle.wav" />
+    <None Include="bin\Debug\sfx\cardSlide1.wav" />
+    <None Include="bin\Debug\sfx\cardSlide2.wav" />
+    <None Include="bin\Debug\sfx\cardSlide3.wav" />
+    <None Include="bin\Debug\sfx\cardSlide4.wav" />
+    <None Include="bin\Debug\sfx\cardSlide5.wav" />
+    <None Include="bin\Debug\sfx\cardSlide6.wav" />
+    <None Include="bin\Debug\sfx\cardSlide7.wav" />
+    <None Include="bin\Debug\sfx\cardSlide8.wav" />
+    <None Include="bin\Debug\sfx\cardTakeOutPackage1.wav" />
+    <None Include="bin\Debug\sfx\cardTakeOutPackage2.wav" />
+    <None Include="bin\Debug\sfx\chipLay1.wav" />
+    <None Include="bin\Debug\sfx\chipLay2.wav" />
+    <None Include="bin\Debug\sfx\chipLay3.wav" />
+    <None Include="bin\Debug\sfx\chipsCollide1.wav" />
+    <None Include="bin\Debug\sfx\chipsCollide2.wav" />
+    <None Include="bin\Debug\sfx\chipsCollide3.wav" />
+    <None Include="bin\Debug\sfx\chipsCollide4.wav" />
+    <None Include="bin\Debug\sfx\chipsHandle1.wav" />
+    <None Include="bin\Debug\sfx\chipsHandle2.wav" />
+    <None Include="bin\Debug\sfx\chipsHandle3.wav" />
+    <None Include="bin\Debug\sfx\chipsHandle4.wav" />
+    <None Include="bin\Debug\sfx\chipsHandle5.wav" />
+    <None Include="bin\Debug\sfx\chipsHandle6.wav" />
+    <None Include="bin\Debug\sfx\chipsStack1.wav" />
+    <None Include="bin\Debug\sfx\chipsStack2.wav" />
+    <None Include="bin\Debug\sfx\chipsStack3.wav" />
+    <None Include="bin\Debug\sfx\chipsStack4.wav" />
+    <None Include="bin\Debug\sfx\chipsStack5.wav" />
+    <None Include="bin\Debug\sfx\chipsStack6.wav" />
+    <None Include="bin\Debug\sfx\diceThrow1.wav" />
+    <None Include="bin\Debug\sfx\diceThrow2.wav" />
+    <None Include="bin\Debug\sfx\diceThrow3.wav" />
+    <None Include="bin\Debug\sfx\diceThrow4.wav" />
+    <None Include="bin\Debug\sfx\dieGrab1.wav" />
+    <None Include="bin\Debug\sfx\dieGrab2.wav" />
+    <None Include="bin\Debug\sfx\dieShuffle1.wav" />
+    <None Include="bin\Debug\sfx\dieShuffle2.wav" />
+    <None Include="bin\Debug\sfx\dieShuffle3.wav" />
+    <None Include="bin\Debug\sfx\dieThrow1.wav" />
+    <None Include="bin\Debug\sfx\dieThrow2.wav" />
+    <None Include="bin\Debug\sfx\dieThrow3.wav" />
+    <None Include="bin\Debug\sfx\pathway-to-haven.wav" />
+    <None Include="bin\Debug\sfx\zapsplat_multimedia_click_003_19369.wav" />
+    <None Include="bin\Debug\img\Cartes\Arrieres\black deck.png" />
+    <None Include="bin\Debug\sfx\Fonds\pathway-to-haven.wav" />
+    <None Include="bin\Debug\sfx\Fonds\Glide With Me.wav" />
+    <None Include="bin\Debug\sfx\Fonds\Memoir of Summer.wav" />
+    <None Include="bin\Debug\sfx\Fonds\Whisper of the Sea.wav" />
+    <None Include="bin\Debug\cursors\Numix Cursors\Numix Dark x2\Arrow.cur" />
+    <None Include="bin\Debug\cursors\Numix Cursors\Numix Dark x2\Cross.cur" />
+    <None Include="bin\Debug\cursors\Numix Cursors\Numix Dark x2\Hand.cur" />
+    <None Include="bin\Debug\cursors\Numix Cursors\Numix Dark x2\Handwriting.cur" />
+    <None Include="bin\Debug\cursors\Numix Cursors\Numix Dark x2\Help.cur" />
+    <None Include="bin\Debug\cursors\Numix Cursors\Numix Dark x2\IBeam.cur" />
+    <None Include="bin\Debug\cursors\Numix Cursors\Numix Dark x2\SizeAll.cur" />
+    <None Include="bin\Debug\cursors\Numix Cursors\Numix Dark x2\SizeNESW.cur" />
+    <None Include="bin\Debug\cursors\Numix Cursors\Numix Dark x2\SizeNS.cur" />
+    <None Include="bin\Debug\cursors\Numix Cursors\Numix Dark x2\SizeNWSE.cur" />
+    <None Include="bin\Debug\cursors\Numix Cursors\Numix Dark x2\SizeWE.cur" />
+    <None Include="bin\Debug\cursors\Numix Cursors\Numix Dark x2\UpArrow.cur" />
+    <Content Include="loho.ico" />
+    <None Include="sfx\button.wav" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
