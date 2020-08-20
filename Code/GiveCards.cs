@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -28,9 +29,10 @@ namespace Poker
             //_dist.Play();
         }
 
+
         public async void moveCards_Tick(object sender, EventArgs e)
         {
-            int i = 1;
+          
       
             if (Partie)
             {

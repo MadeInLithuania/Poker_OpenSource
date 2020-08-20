@@ -18,6 +18,7 @@ namespace Poker
         int ArgentJoueur, ArgentAdv1, ArgentAdv2, ArgentAdv3, ArgentAdv4, ArgentAdv5, ArgentAdv6, ArgentAdv7, ArgentAdv8;
         public string TXArgent = "Argent :";
         int ante = 100;
+        int total;
         public bool Partie, check;
         #endregion
 
@@ -27,15 +28,25 @@ namespace Poker
             if(Partie == true)
             {
                 ArgentJoueur -= ante;
+                total += ante;
                 ArgentAdv1 -= ante;
+                total += ante;
                 ArgentAdv2 -= ante;
+                total += ante;
                 ArgentAdv3 -= ante;
+                total += ante;
                 ArgentAdv4 -= ante;
+                total += ante;
                 ArgentAdv5 -= ante;
+                total += ante;
                 ArgentAdv6 -= ante;
+                total += ante;
                 ArgentAdv7 -= ante;
+                total += ante;
                 ArgentAdv8 -= ante;
+                total += ante;
 
+                labelTotal.Text = TXTotal + total;
                 labelArgentJoueur.Text = TXArgent + ArgentJoueur;
                 lblArgentAdversaire1.Text = TXArgent + ArgentAdv1;
                 lblArgentAdversaire2.Text = TXArgent + ArgentAdv2;
@@ -91,6 +102,8 @@ namespace Poker
             "Chenai ",
             "Alton ",
             "Remi ",
+            "Liucijus",
+            "Tadas",
             "Haroon ",
             "Kadeem ",
             "Sebastian ",

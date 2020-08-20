@@ -139,6 +139,11 @@ namespace Poker
                 {
                     Cartes carte2 = jeu[Carte];
                     CartesUtilisees.Add(Carte);
+                    while (CartesUtilisees.Contains(Carte))
+                    {
+                        Carte = CarteAleatoire();
+                    }
+                    Carte = 1 * Carte;
                     ListeCartes.Add(carte2);
                     pictureBoxJoueur2.ImageLocation = carte2.Image;
                 }
@@ -167,6 +172,11 @@ namespace Poker
                 {
                     Cartes carteA1_2 = jeu[Carte];
                     CartesUtilisees.Add(Carte);
+                    while (CartesUtilisees.Contains(Carte))
+                    {
+                        Carte = CarteAleatoire();
+                    }
+                    Carte = 1 * Carte;
                     ListeCartes.Add(carteA1_2);
                     pictureBoxAdv1_2.ImageLocation = carteA1_2.Image;
                 }
@@ -197,6 +207,11 @@ namespace Poker
                 {
                     Cartes carteA2_2 = jeu[Carte];
                     CartesUtilisees.Add(Carte);
+                    while (CartesUtilisees.Contains(Carte))
+                    {
+                        Carte = CarteAleatoire();
+                    }
+                    Carte = 1 * Carte;
                     ListeCartes.Add(carteA2_2);
                     pictureBoxAdv2_2.ImageLocation = carteA2_2.Image;
                 }
@@ -225,11 +240,17 @@ namespace Poker
                 {
                     Cartes carteA3_2 = jeu[Carte];
                     CartesUtilisees.Add(Carte);
+                    while (CartesUtilisees.Contains(Carte))
+                    {
+                        Carte = CarteAleatoire();
+                    }
+                    Carte = 1 * Carte;
                     ListeCartes.Add(carteA3_2);
                     pictureBoxAdv3_2.ImageLocation = carteA3_2.Image;
                 }
             }
             #endregion
+
             #region Adversaire 4
             Carte = CarteAleatoire();
             Cartes carteA4 = jeu[Carte];
@@ -253,12 +274,18 @@ namespace Poker
                 {
                     Cartes carteA4_2 = jeu[Carte];
                     CartesUtilisees.Add(Carte);
+                    while (CartesUtilisees.Contains(Carte))
+                    {
+                        Carte = CarteAleatoire();
+                    }
+                    Carte = 1 * Carte;
                     ListeCartes.Add(carteA4_2);
                     pictureBoxAdv4_2.ImageLocation = carteA4_2.Image;
                 }
 
             }
             #endregion
+
             #region Adversaire 5
             Carte = CarteAleatoire();
             Cartes carteA5 = jeu[Carte];
@@ -282,11 +309,17 @@ namespace Poker
                 {
                     Cartes carteA5_2 = jeu[Carte];
                     CartesUtilisees.Add(Carte);
+                    while (CartesUtilisees.Contains(Carte))
+                    {
+                        Carte = CarteAleatoire();
+                    }
+                    Carte = 1 * Carte;
                     ListeCartes.Add(carteA5_2);
                     pictureBoxAdv5_2.ImageLocation = carteA5_2.Image;
                 }
-                #endregion
             }
+                #endregion
+
             #region Adversaire 6
             Carte= CarteAleatoire();
             Cartes carteA6 = jeu[Carte];
@@ -311,6 +344,11 @@ namespace Poker
                 {
                     Cartes carteA6_2 = jeu[Carte];
                     CartesUtilisees.Add(Carte);
+                    while (CartesUtilisees.Contains(Carte))
+                    {
+                        Carte = CarteAleatoire();
+                    }
+                    Carte = 1 * Carte;
                     ListeCartes.Add(carteA6_2);
                     pictureBoxAdv6_2.ImageLocation = carteA6_2.Image;
                 }                
@@ -340,11 +378,17 @@ namespace Poker
                 {
                     Cartes carteA7_2 = jeu[Carte];
                     CartesUtilisees.Add(Carte);
+                    while (CartesUtilisees.Contains(Carte))
+                    {
+                        Carte = CarteAleatoire();
+                    }
+                    Carte = 1 * Carte;
                     ListeCartes.Add(carteA7_2);
                     pictureBoxAdv7_2.ImageLocation = carteA7_2.Image;
                 }
             }
             #endregion
+
             #region Adversaire 8
             Carte = CarteAleatoire();
             Cartes carteA8 = jeu[Carte];
@@ -368,6 +412,11 @@ namespace Poker
                 {
                     Cartes carteA8_2 = jeu[Carte];
                     CartesUtilisees.Add(Carte);
+                    while (CartesUtilisees.Contains(Carte))
+                    {
+                        Carte = CarteAleatoire();
+                    }
+                    Carte = 1 * Carte;
                     ListeCartes.Add(carteA8_2);
                     pictureBoxAdv8_2.ImageLocation = carteA8_2.Image;
                 }
@@ -467,6 +516,7 @@ namespace Poker
                 }
             }
             #endregion
+
             #region Adversaire 4
             int CarteAleaA4 = CarteAleatoire();
             Cartes carteA4 = jeu[CarteAleaA4];
@@ -497,6 +547,7 @@ namespace Poker
 
             }
             #endregion
+
             #region Adversaire 5
             int CarteAleaA5 = CarteAleatoire();
             Cartes carteA5 = jeu[CarteAleaA5];
@@ -586,6 +637,7 @@ namespace Poker
                 }
             }
             #endregion
+
             #region Adversaire 8
             int CarteAleaA8 = CarteAleatoire();
             Cartes carteA8 = jeu[CarteAleaA8];
