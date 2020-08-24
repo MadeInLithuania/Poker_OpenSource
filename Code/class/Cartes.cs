@@ -4,13 +4,19 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Poker.Play;
 
 namespace Poker
 {
-    public class Cartes
-    {
-        public int Valeur { get; set; }
-        public string Nom { get; set; }
-        public string Image { get; set; }
+            public struct Cartes { 
+            public Symb Grade { get; set; }
+            public int ID { get; set; }
+            public Rank Valeur { get; set; }
+            public string Nom { get; set; }
+            public string Image { get; set; }
+            public bool EstConnu { get; set; }
+
     }
+
 }
+
