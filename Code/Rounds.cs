@@ -27,5 +27,13 @@ namespace Poker
         public bool TourAdv7 = false;
         public bool TourAdv8 = false;
         #endregion
-    }
+
+        void Round()
+        {
+            if (TourAdv1)
+            {
+                Mise_();
+            }
+        }
+    } 
 }

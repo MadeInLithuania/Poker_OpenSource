@@ -20,7 +20,7 @@ namespace Poker
         {
             if (TourJoueur)
             {
-                labelJoueur.BackColor = Color.Orange;
+               labelJoueur.BackColor = Color.Orange;
             }
 
             else if (TourAdv1)

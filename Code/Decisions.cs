@@ -18,6 +18,8 @@ namespace Poker
     {
         public bool Couche = false;
         public bool Mise = false;
+        public bool Check = false;
+        int tot;
 
         void ChargerBoutons()
         {
@@ -55,16 +57,35 @@ namespace Poker
             TourAdv1 = true;
             labelJoueur.BackColor = Color.Transparent;
             WhoIsPlaying();
+            Round();
         }
 
         public void Mise_()
         {
-            ArgentJoueur -= _Mise;
-            labelArgentJoueur.Text = TXArgent + ArgentJoueur;
+            if (TourJoueur)
+            {
+                ArgentJoueur -= _Mise;
+                tot = _Mise + total;
+                labelArgentJoueur.Text = TXArgent + ArgentJoueur;
+                labelTotal.Text = TXArgent + tot;
+                labelJoueur.BackColor = Color.Transparent;
+            }
+
+            else if (TourAdv1)
+            {
+                int ArgMax1 = ArgentAdv1 / 10;
+                Random rd1 = new Random();
+                _Mise = rd1.Next(10, ArgMax1);
+                ArgentAdv1 -= _Mise;
+                tot = _Mise + total;
+                lblArgentAdversaire1.Text = TXArgent + ArgentAdv1;
+                labelTotal.Text = TXArgent + tot;
+                lblAdv1.BackColor = Color.Transparent;
+            }
 
         }
 
-        private void btnValider_Click(object sender, EventArgs e)
+        private async void btnValider_Click(object sender, EventArgs e)
         {
             int.TryParse(textBoxmise.Text, out _Mise);
             if (!int.TryParse(textBoxmise.Text, out _Mise))
@@ -86,10 +107,13 @@ namespace Poker
 
             else
             {
+                await Task.Delay(500);
                 Mise_();
+                Round();
                 TourJoueur = false;
                 TourAdv1 = true;
                 WhoIsPlaying();
+                Round();
                 HideButtons();
                 btnAnnuler.Visible = false;
                 textBoxmise.Visible = false;
@@ -97,34 +121,40 @@ namespace Poker
             }
         }
 
-        private void btnMiser_Click(object sender, EventArgs e)
+        private async void btnMiser_Click(object sender, EventArgs e)
         {
             Mise = true;
-            if (Mise){
-                 textBoxmise.Visible = true;
+            if (Mise)
+            {
+                await Task.Delay(500);
+                textBoxmise.Visible = true;
                 HideButtons();
                 btnValider.Visible = true;
                 btnAnnuler.Visible = true;
             }
-            
+            else return;
         }
 
-        private void btnSuivre_Click(object sender, EventArgs e)
+        private async void btnSuivre_Click(object sender, EventArgs e)
         {
+            await Task.Delay(500);
             TourJoueur = false;
             TourAdv1 = true;
+            Round();
         }
 
-        private void btnAnnuler_Click(object sender, EventArgs e)
+        private async void btnAnnuler_Click(object sender, EventArgs e)
         {
+            await Task.Delay(500);
             btnAnnuler.Visible = false;
             btnValider.Visible = false;
             textBoxmise.Visible = false;
             ChargerBoutons();
         }
 
-        public void HideButtons()
+        public async void HideButtons()
         {
+            await Task.Delay(50);
             btnCheck.Visible = false;
             btnCoucher.Visible = false;
             btnMiser.Visible = false;
