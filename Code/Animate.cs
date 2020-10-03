@@ -181,6 +181,124 @@ namespace Poker
 
             else return;
         }
+
+        void CartesTable()
+        {
+            switch (Tours)
+            {
+                case 1:
+                    #region Flop 1
+                    int flops = CarteAleatoire();
+                    Cartes carteFlop_1 = jeu[flops];
+                    CartesUtilisees.Add(flops);
+
+                    while (CartesUtilisees.Contains(flops))
+                    {
+                        flops = CarteAleatoire();
+                    }
+                    flops = 1 * flops;
+
+                    ListeCartes.Add(carteFlop_1);
+
+                    Timer timer_flop_1 = new Timer();
+                    timer_flop_1.Interval = 500;
+                    timer_flop_1.Enabled = false;
+                    #endregion
+
+                    #region Flop 2
+                    flops = CarteAleatoire();
+                    Cartes carteFlop_2 = jeu[flops];
+                    CartesUtilisees.Add(flops);
+
+                    while (CartesUtilisees.Contains(flops))
+                    {
+                        flops = CarteAleatoire();
+                    }
+                    flops = 1 * flops;
+
+                    ListeCartes.Add(carteFlop_2);
+
+                    Timer timer_flop_2 = new Timer();
+                    timer_flop_2.Interval = 500;
+                    timer_flop_2.Enabled = false;
+                    #endregion
+
+                    #region Flop 3
+                    flops = CarteAleatoire();
+                    Cartes carteFlop_3 = jeu[flops];
+                    CartesUtilisees.Add(flops);
+
+                    while (CartesUtilisees.Contains(flops))
+                    {
+                        flops = CarteAleatoire();
+                    }
+                    flops = 1 * flops;
+
+                    ListeCartes.Add(carteFlop_3);
+
+                    Timer timer_flop_3 = new Timer();
+                    timer_flop_3.Interval = 500;
+                    timer_flop_3.Enabled = false;
+                    #endregion
+
+                    switch (Partie)
+                    {
+                        case true:
+                            /*int x = 5;
+                            pictureBoxdistJoueur.Left += x;
+                            if (pictureBoxdistJoueur.Left >= 200)*/
+                            {
+                                timer_flop_1.Stop();
+                            }
+                            break;
+
+                        case false:
+                            Console.WriteLine("Tentative d'animation : " + timer_flop_1.ToString());
+                            break;
+                    }
+                    
+                    pictureBoxFlop1.ImageLocation = carteFlop_1.Image;
+                    pictureBoxFlop2.ImageLocation = carteFlop_2.Image;
+                    pictureBoxFlop3.ImageLocation = carteFlop_3.Image;
+
+                    //non révelés
+                    pictureBoxTurn.Image = Properties.Resources.deck_3;
+                    pictureBoxRiver.Image = Properties.Resources.deck_3; 
+                    break;
+
+                case 2:
+                    int turns = CarteAleatoire();
+                    Cartes carteTurn = jeu[turns];
+                    CartesUtilisees.Add(turns);
+
+                    while (CartesUtilisees.Contains(turns))
+                    {
+                        turns = CarteAleatoire();
+                    }
+                    turns = 1 * turns;
+
+                    ListeCartes.Add(carteTurn);
+
+                    pictureBoxTurn.ImageLocation = carteTurn.Image;
+                    break;
+
+                case 3:
+                    int rivers = CarteAleatoire();
+                    Cartes carteriver = jeu[rivers];
+                    CartesUtilisees.Add(rivers);
+
+                    while (CartesUtilisees.Contains(rivers))
+                    {
+                        rivers = CarteAleatoire();
+                    }
+                    rivers = 1 * rivers;
+
+                    ListeCartes.Add(carteriver);
+
+                    pictureBoxRiver.ImageLocation = carteriver.Image;
+                    break;
+            }
+        }
     }
 }
     
