@@ -329,7 +329,7 @@ namespace Poker
             if (Partie)
             {
                 Distrib = true;
-                int y2_2 = 23;
+                int y2_2 = 20;
                 int x2_2 = 100;
 
                 pictureBoxd2_2.Top -= y2_2;
@@ -357,7 +357,7 @@ namespace Poker
             if (Partie)
             {
                 Distrib = true;
-                int y3_2 = 23;
+                int y3_2 = 20;
                 int x3_2 = 100;
 
                 pictureBoxd3_2.Top += y3_2;
