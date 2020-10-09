@@ -1,4 +1,4 @@
-﻿using Poker.Code;
+using Poker.Code;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
