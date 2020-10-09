@@ -32,8 +32,6 @@ namespace Poker
 
         public async void moveCards_Tick(object sender, EventArgs e)
         {
-          
-      
             if (Partie)
             {
                 Distrib = true;
@@ -52,7 +50,6 @@ namespace Poker
                     GenCartesAdv();
                     await Task.Delay(delay);
                     moveCardsAdv1_1.Enabled = true;
-                    label2.Visible = true;
                     distj1 = false;
                 }
                 #endregion
@@ -325,11 +322,10 @@ namespace Poker
         }
         public async void moveCardsAdv2_2_Tick(object sender, EventArgs e)
         {
-
             if (Partie)
             {
                 Distrib = true;
-                int y2_2 = 20;
+                int y2_2 = 23;
                 int x2_2 = 100;
 
                 pictureBoxd2_2.Top -= y2_2;
@@ -357,7 +353,7 @@ namespace Poker
             if (Partie)
             {
                 Distrib = true;
-                int y3_2 = 20;
+                int y3_2 = 23;
                 int x3_2 = 100;
 
                 pictureBoxd3_2.Top += y3_2;
@@ -515,33 +511,15 @@ namespace Poker
                     Distrib = false;
                     dist8_1 = false;
                     Decision = true;
-                    label2.Visible = false;
                     await Task.Delay(delay + 200);
                     ChargerBoutons();
+                    TourJoueur = true;
                     WhoIsPlaying();
+                    CompteTours();
                 }
                 #endregion
             }
         }
     }
 }
-
-/*
-            pictureBoxAdv1_1.Image = Poker.Properties.Resources.deck_3;
-            pictureBoxAdv1_2.Image = Poker.Properties.Resources.deck_3;
-            pictureBoxAdv2_1.Image = Poker.Properties.Resources.deck_3;
-            pictureBoxAdv2_2.Image = Poker.Properties.Resources.deck_3;
-            pictureBoxAdv3_1.Image = Poker.Properties.Resources.deck_3;
-            pictureBoxAdv3_2.Image = Poker.Properties.Resources.deck_3;
-            pictureBoxAdv4_1.Image = Poker.Properties.Resources.deck_3;
-            pictureBoxAdv4_2.Image = Poker.Properties.Resources.deck_3;
-            pictureBoxAdv5_1.Image = Poker.Properties.Resources.deck_3;
-            pictureBoxAdv5_2.Image = Poker.Properties.Resources.deck_3;
-            pictureBoxAdv6_1.Image = Poker.Properties.Resources.deck_3;
-            pictureBoxAdv6_2.Image = Poker.Properties.Resources.deck_3;
-            pictureBoxAdv7_1.Image = Poker.Properties.Resources.deck_3;
-            pictureBoxAdv7_2.Image = Poker.Properties.Resources.deck_3;
-            pictureBoxAdv8_1.Image = Poker.Properties.Resources.deck_3;
-            pictureBoxAdv8_2.Image = Poker.Properties.Resources.deck_3;
-
-    */
+          
