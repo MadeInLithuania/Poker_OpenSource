@@ -1,4 +1,4 @@
-Ôªøusing Poker.Code;
+using Poker.Code;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,17 +21,15 @@ namespace Poker
         public bool Check = false;
         public bool Decision;
 
-        public bool Couch√© = false, Couch√©_1 = false, Couch√©_2, Couch√©_3, Couch√©_4, Couch√©_5, Couch√©_6, Couch√©_7, Couch√©_8;
+        public bool CouchÈ = false, CouchÈ_1 = false, CouchÈ_2, CouchÈ_3, CouchÈ_4, CouchÈ_5, CouchÈ_6, CouchÈ_7, CouchÈ_8;
         public bool __Mise = false;
 
-
+        int ArgRest1;
         int max1, max2, max3, max4, max5, max6, max7, max8;
-        int miseTotal;
         int _Mise1, _Mise2, _Mise3, _Mise4, _Mise5, _Mise6, _Mise7, _Mise8;
-        int a = 2000; // pour les actions
 
         public string strCheck = "Check";
-        public string strCoucher = "Couch√©";
+        public string strCoucher = "CouchÈ";
         public string strMise = "Mise :";
         public string strRelance = "Relance";
         public string strSuivre = "Suivre";
@@ -43,14 +41,13 @@ namespace Poker
             btnMiser.Visible = true;
             btnRelancer.Visible = true;
             btnSuivre.Visible = true;
-            textBoxmise.Text = "";
         }
 
         public void btnCoucher_Click(object sender, EventArgs e)
         {
             if (TourJoueur)
             {
-                Couch√© = true;
+                CouchÈ = true;
                 CoucherJoueur();
                 HideButtons();
                 TourJoueur = false;
@@ -59,7 +56,7 @@ namespace Poker
                 WhoIsPlaying();
                 Round();
             }
-           
+
         }
 
         private async void btnValider_Click(object sender, EventArgs e)
@@ -73,15 +70,13 @@ namespace Poker
                     MessageBoxIcon.Error);
                 textBoxmise.Text = " ";
             }
-
-            else if(_Mise > ArgentJoueur)
+            else if (_Mise > ArgentJoueur)
             {
                 MessageBox.Show("Vous ne pouvez pas mettre autant.",
                     "Erreur",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
-
             else
             {
                 await Task.Delay(500);
@@ -112,21 +107,8 @@ namespace Poker
 
         private async void btnSuivre_Click(object sender, EventArgs e)
         {
-            await Task.Delay(a);
-            switch (Tours)
-            {
-                case 1:
-                    MessageBox.Show("Vous ne pouvez pas suivre au premier tour.",
-                    "Attention",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-                    break;
-
-                case 2:
-                    Suivre();
-                    break;
-
-            }
+            await Task.Delay(1000);
+            Suivre();
         }
 
         private async void btnAnnuler_Click(object sender, EventArgs e)
@@ -149,14 +131,13 @@ namespace Poker
 
         public async void Mise_()
         {
-            await Task.Delay(a);
-            
+            await Task.Delay(800);
             if (TourJoueur)
             {
-                if (!Couch√©)
+                if (!CouchÈ)
                 {
                     if (__Mise == false)
-                    {                 
+                    {
                         ArgentJoueur -= _Mise;
                         total += _Mise;
                         labelArgentJoueur.Text = TXArgent + ArgentJoueur;
@@ -168,15 +149,13 @@ namespace Poker
                         TourAdv1 = true;
                         TourJoueur = false;
                         WhoIsPlaying();
-                        Probs();
+                        ConditionsTours();
                     }
-
                     else
                     {
                         return;
                     }
                 }
-
                 else
                 {
                     return;
@@ -184,11 +163,11 @@ namespace Poker
             }
             else if (TourAdv1)
             {
-                if (Couch√©_1 == false)
+                if (CouchÈ_1 == false)
                 {
                     if (__Mise == false)
                     {
-                        await Task.Delay(200);
+                        await Task.Delay(100);
                         int ArgMax1 = ArgentAdv1 / 10;
                         Random rd1 = new Random();
                         _Mise1 = rd1.Next(10, ArgMax1);
@@ -204,25 +183,19 @@ namespace Poker
                         WhoIsPlaying();
                         RandDecisions();
                     }
-                    else //si d√©j√† mis√©
+                    else
                     {
-                        TourAdv1 = true;
-                        TourAdv2 = true;
-                        Probs();
+                        //Probs();
                     }
                 }
-                else //si couch√©
+                else
                 {
-                    TourAdv1 = false;
-                    TourAdv2 = true;
-                    WhoIsPlaying();
-                    RandDecisions();
+
                 }
             }
-
             else if (TourAdv2)
             {
-                if (Couch√©_2 == false)
+                if (CouchÈ_2 == false)
                 {
                     if (__Mise == false)
                     {
@@ -252,14 +225,13 @@ namespace Poker
 
                 }
             }
-
             else if (TourAdv3)
             {
-                if (Couch√©_3 == false)
+                if (CouchÈ_3 == false)
                 {
                     if (__Mise == false)
                     {
-                        await Task.Delay(1500);
+                        await Task.Delay(100);
                         int ArgMax3 = ArgentAdv3 / 10;
                         Random rd3 = new Random();
                         _Mise3 = rd3.Next(10, ArgMax3);
@@ -285,17 +257,16 @@ namespace Poker
 
                 }
             }
-
             else if (TourAdv4)
             {
-                if (Couch√©_4 == false)
+                if (CouchÈ_4 == false)
                 {
                     if (__Mise == false)
                     {
-                        await Task.Delay(1500);
+                        await Task.Delay(100);
                         int ArgMax4 = ArgentAdv4 / 10;
                         Random rd4 = new Random();
-                        _Mise4 = rd4.Next(10, ArgMax4);
+                        _Mise3 = rd4.Next(10, ArgMax4);
                         ArgentAdv4 -= _Mise4;
                         total += _Mise4;
                         lblArgentAdversaire4.Text = TXArgent + ArgentAdv4;
@@ -318,39 +289,6 @@ namespace Poker
 
                 }
             }
-
-            else if (TourAdv5)
-            {
-                if (Couch√©_5 == false)
-                {
-                    if (__Mise == false)
-                    {
-                        await Task.Delay(1500);
-                        int ArgMax5 = ArgentAdv5 / 10;
-                        Random rd5 = new Random();
-                        _Mise5 = rd5.Next(10, ArgMax5);
-                        ArgentAdv5 -= _Mise5;
-                        total += _Mise5;
-                        lblArgentAdversaire5.Text = TXArgent + ArgentAdv5;
-                        labelTotal.Text = TXArgent + total;
-                        lblAdv5.BackColor = Color.Transparent;
-                        lblActAdv5.Text = strMise + _Mise5;
-                        mises.Add(_Mise5);
-                        TourAdv5 = false;
-                        TourAdv6 = true;
-                        WhoIsPlaying();
-                        RandDecisions();
-                    }
-                    else
-                    {
-                        //Probs();
-                    }
-                }
-                else
-                {
-
-                }
-            }
         }
 
         public void CoucherJoueur()
@@ -358,7 +296,7 @@ namespace Poker
             pictureBoxJoueur1.Image = null;
             pictureBoxJoueur2.Image = null;
             lblActJoueur.Text = strCoucher;
-            Couch√© = true;
+            CouchÈ = true;
             labelJoueur.BackColor = Color.Transparent;
             TourJoueur = false;
             TourAdv1 = true;
@@ -371,337 +309,199 @@ namespace Poker
                 pictureBoxAdv1_1.Image = null;
                 pictureBoxAdv1_2.Image = null;
                 lblActAdv1.Text = strCoucher;
-                Couch√©_1 = true;
+                CouchÈ_1 = true;
                 lblAdv1.BackColor = Color.Transparent;
                 TourAdv1 = false;
                 TourAdv2 = true;
                 WhoIsPlaying();
-                Probs();
+                //RandDecisions();
             }
-
             else if (TourAdv2)
             {
                 pictureBoxAdv2_1.Image = null;
                 pictureBoxAdv2_2.Image = null;
                 lblActAdv2.Text = strCoucher;
-                Couch√©_2 = true;
+                CouchÈ_2 = true;
                 lblAdv2.BackColor = Color.Transparent;
                 TourAdv2 = false;
                 TourAdv3 = true;
                 WhoIsPlaying();
-                Probs();
+                //RandDecisions();
             }
-
             else if (TourAdv3)
             {
                 pictureBoxAdv3_1.Image = null;
                 pictureBoxAdv3_2.Image = null;
                 lblActAdv3.Text = strCoucher;
-                Couch√©_3 = true;
+                CouchÈ_3 = true;
                 lblAdv3.BackColor = Color.Transparent;
                 TourAdv3 = false;
                 TourAdv4 = true;
                 WhoIsPlaying();
-                Probs();
             }
-
             else if (TourAdv4)
             {
                 pictureBoxAdv4_1.Image = null;
                 pictureBoxAdv4_2.Image = null;
                 lblActAdv4.Text = strCoucher;
-                Couch√©_4 = true;
+                CouchÈ_4 = true;
                 lblAdv4.BackColor = Color.Transparent;
                 TourAdv4 = false;
                 TourAdv5 = true;
                 WhoIsPlaying();
-                Probs();
             }
-
             else if (TourAdv5)
             {
                 pictureBoxAdv5_1.Image = null;
                 pictureBoxAdv5_2.Image = null;
                 lblActAdv5.Text = strCoucher;
-                Couch√©_5 = true;
+                CouchÈ_5 = true;
                 lblAdv5.BackColor = Color.Transparent;
                 TourAdv5 = false;
                 TourAdv6 = true;
                 WhoIsPlaying();
-                Probs();
             }
-
             else if (TourAdv6)
             {
                 pictureBoxAdv6_1.Image = null;
                 pictureBoxAdv6_2.Image = null;
                 lblActAdv6.Text = strCoucher;
-                Couch√©_6 = true;
+                CouchÈ_6 = true;
                 lblAdv6.BackColor = Color.Transparent;
                 TourAdv6 = false;
                 TourAdv7 = true;
                 WhoIsPlaying();
-                Probs();
             }
-
             else if (TourAdv7)
             {
                 pictureBoxAdv7_1.Image = null;
                 pictureBoxAdv7_2.Image = null;
                 lblActAdv7.Text = strCoucher;
-                Couch√©_7 = true;
+                CouchÈ_7 = true;
                 lblAdv7.BackColor = Color.Transparent;
                 TourAdv7 = false;
                 TourAdv8 = true;
                 WhoIsPlaying();
-                Probs();
             }
-
             else if (TourAdv8)
             {
                 pictureBoxAdv8_1.Image = null;
                 pictureBoxAdv8_2.Image = null;
-                lblActAdv8.Text = strCoucher; ;
-                Couch√©_8 = true;
+                lblActAdv8.Text = strCoucher;
+                CouchÈ_8 = true;
                 lblAdv8.BackColor = Color.Transparent;
                 TourAdv8 = false;
                 TourJoueur = true;
                 WhoIsPlaying();
-                ChargerBoutons();
-                ConditionsTours();
             }
-
             else return;
         }
 
         public async void Suivre()
         {
-            await Task.Delay(a);
-
-            switch (Tours)
+            await Task.Delay(500);
+            if (TourAdv1)
             {
-                #region Premier tour
-                case 1:
+                if (CouchÈ_1 == false)
+                {
+                    int max = mises.Max();
+                    ArgentAdv1 -= max;
+                    //ArgRest1 = max;
+                    lblArgentAdversaire1.Text = TXArgent + ArgentAdv1;
+                    labelTotal.Text = TXTotal + (total + max);
+                    //mises.Clear();
+                    lblActAdv1.Text = strSuivre;
+                    lblAdv1.BackColor = Color.Transparent;
+                    TourAdv1 = false;
+                    TourAdv2 = true;
+                    WhoIsPlaying();
+                    Probs();
+                }
+                else
+                {
+                    return;
+                }
+            }
+            else if (TourAdv2)
+            {
+                if (CouchÈ_2 == false)
+                {
+                    max2 = mises.Max();
+                    ArgentAdv2 -= max2;
+                    lblArgentAdversaire2.Text = TXArgent + ArgentAdv2;
+                    labelTotal.Text = TXTotal + (total + max2 + max2);
+                    //mises.Clear();
+                    lblActAdv2.Text = strSuivre;
+                    lblAdv2.BackColor = Color.Transparent;
+                    TourAdv2 = false;
+                    TourAdv3 = true;
+                    WhoIsPlaying();
+                    Probs();
+                }
+                else
+                {
+                    return;
+                }
+            }
 
-                    if (TourAdv1)
-                    {
-                        if (Couch√©_1 == false)
-                        {
-                            int max = mises.Max();
-                            ArgentAdv1 -= max;
-                            //ArgRest1 = max;
-                            lblArgentAdversaire1.Text = TXArgent + ArgentAdv1;
-                            labelTotal.Text = TXTotal + (total + max);
-                            //mises.Clear();
-                            lblActAdv1.Text = strSuivre;
-                            lblAdv1.BackColor = Color.Transparent;
-                            TourAdv1 = false;
-                            TourAdv2 = true;
-                            WhoIsPlaying();
-                            Probs();
-                        }
+            else if (TourAdv3)
+            {
+                if (CouchÈ_3 == false)
+                {
+                    max3 = mises.Max();
+                    ArgentAdv3 -= max3;
+                    lblArgentAdversaire3.Text = TXArgent + ArgentAdv3;
+                    labelTotal.Text = TXTotal + (total + max2 + max3);
+                    //mises.Clear();
+                    lblActAdv3.Text = strSuivre;
+                    lblAdv3.BackColor = Color.Transparent;
+                    TourAdv3 = false;
+                    TourAdv4 = true;
+                    WhoIsPlaying();
+                    Probs();
+                }
+                else
+                {
+                    return;
+                }
+            }
 
-                        else
-                        {
-                            return;
-                        }
-                    }
-
-                    else if (TourAdv2)
-                    {
-                        if (Couch√©_2 == false)
-                        {
-                            max2 = mises.Max();
-                            ArgentAdv2 -= max2;
-                            lblArgentAdversaire2.Text = TXArgent + ArgentAdv2;
-                            miseTotal = total + max1 + max2;
-                            labelTotal.Text = TXTotal + miseTotal;
-                            //mises.Clear();
-                            lblActAdv2.Text = strSuivre;
-                            lblAdv2.BackColor = Color.Transparent;
-                            TourAdv2 = false;
-                            TourAdv3 = true;
-                            WhoIsPlaying();
-                            Probs();
-                        }
-
-                        else
-                        {
-                            return;
-                        }
-                    }
-
-                    else if (TourAdv3)
-                    {
-                        if (Couch√©_3 == false)
-                        {
-                            max3 = mises.Max();
-                            ArgentAdv3 -= max3;
-                            lblArgentAdversaire3.Text = TXArgent + ArgentAdv3;
-                            miseTotal += max3; 
-                            labelTotal.Text = TXTotal + miseTotal;
-                            //mises.Clear();
-                            lblActAdv3.Text = strSuivre;
-                            lblAdv3.BackColor = Color.Transparent;
-                            TourAdv3 = false;
-                            TourAdv4 = true;
-                            WhoIsPlaying();
-                            Probs();
-                        }
-
-                        else
-                        {
-                            return;
-                        }
-                    }
-
-                    else if (TourAdv4)
-                    {
-                        if (Couch√©_4 == false)
-                        {
-                            max4 = mises.Max();
-                            ArgentAdv4 -= max4;
-                            lblArgentAdversaire4.Text = TXArgent + ArgentAdv4;
-                            miseTotal += max4;
-                            labelTotal.Text = TXTotal + miseTotal;
-                            //mises.Clear();
-                            lblActAdv4.Text = strSuivre;
-                            lblAdv4.BackColor = Color.Transparent;
-                            TourAdv4 = false;
-                            TourAdv5 = true;
-                            WhoIsPlaying();
-                            Probs();
-                        }
-
-                        else
-                        {
-                            return;
-                        }
-                    }
-
-                    else if (TourAdv5)
-                    {
-                        if (Couch√©_5 == false)
-                        {
-                            max5 = mises.Max();
-                            ArgentAdv5 -= max5;
-                            lblArgentAdversaire5.Text = TXArgent + ArgentAdv5;
-                            miseTotal += max5;
-                            labelTotal.Text = TXTotal + miseTotal;
-                            //mises.Clear();
-                            lblActAdv5.Text = strSuivre;
-                            lblAdv5.BackColor = Color.Transparent;
-                            TourAdv5 = false;
-                            TourAdv6 = true;
-                            WhoIsPlaying();
-                            Probs();
-                        }
-
-                        else
-                        {
-                            return;
-                        }
-                    }
-
-                    else if (TourAdv6)
-                    {
-                        if (Couch√©_6 == false)
-                        {
-                            max6 = mises.Max();
-                            ArgentAdv6 -= max6;
-                            lblArgentAdversaire6.Text = TXArgent + ArgentAdv5;
-                            miseTotal += max6;
-                            labelTotal.Text = TXTotal + miseTotal;
-                            //mises.Clear();
-                            lblActAdv6.Text = strSuivre;
-                            lblAdv6.BackColor = Color.Transparent;
-                            TourAdv6 = false;
-                            TourAdv7 = true;
-                            WhoIsPlaying();
-                            Probs();
-                        }
-
-                        else
-                        {
-                            return;
-                        }
-                    }
-
-                    else if (TourAdv7)
-                    {
-                        if (Couch√©_7 == false)
-                        {
-                            max7 = mises.Max();
-                            ArgentAdv7 -= max7;
-                            lblArgentAdversaire7.Text = TXArgent + ArgentAdv7;
-                            miseTotal += max7;
-                            labelTotal.Text = TXTotal + miseTotal;
-                            //mises.Clear();
-                            lblActAdv7.Text = strSuivre;
-                            lblAdv7.BackColor = Color.Transparent;
-                            TourAdv7 = false;
-                            TourAdv8 = true;
-                            WhoIsPlaying();
-                            Probs();
-                        }
-
-                        else
-                        {
-                            return;
-                        }
-                    }
-
-                    else if (TourAdv8)
-                    {
-                        if (Couch√©_8 == false)
-                        {
-                            max8 = mises.Max();
-                            ArgentAdv8 -= max8;
-                            lblArgentAdversaire8.Text = TXArgent + ArgentAdv8;
-                            miseTotal += max8;
-                            labelTotal.Text = TXTotal + miseTotal;
-                            //mises.Clear();
-                            lblActAdv8.Text = strSuivre;
-                            lblAdv8.BackColor = Color.Transparent;
-                            TourAdv8 = false;
-                            TourJoueur = true;
-                            WhoIsPlaying();
-                            ChargerBoutons();
-                            ConditionsTours();
-                        }
-
-                        else
-                        {
-                            return;
-                        }
-                    }
-                    break;
-                #endregion
-                #region Deuxi√®me tour
-                case 2:
-                    
-                    break;
-                #endregion
-                #region Troisi√®me tour
-                case 3:
-                    break;
-                    #endregion
+            else if (TourAdv4)
+            {
+                if (CouchÈ_4 == false)
+                {
+                    max4 = mises.Max();
+                    ArgentAdv4 -= max4;
+                    lblArgentAdversaire4.Text = TXArgent + ArgentAdv4;
+                    labelTotal.Text = TXTotal + (total + max2 + max3 + max4);
+                    //mises.Clear();
+                    lblActAdv4.Text = strSuivre;
+                    lblAdv4.BackColor = Color.Transparent;
+                    TourAdv4 = false;
+                    TourAdv5 = true;
+                    WhoIsPlaying();
+                    Probs();
+                }
+                else
+                {
+                    return;
+                }
             }
         }
 
         void Probs() //quand suivi
         {
             Random rdMise = new Random();
-            int rd = rdMise.Next(1, 8);
+            int rd = rdMise.Next(1, 7);
 
             switch (rd)
             {
-                case 1: // Couch√©
+                case 1: // CouchÈ
                     Coucher();
                     break;
 
                 case 2:
-                    Suivre(); // bient√¥t mise +
+                    Suivre();
                     break;
 
                 case 3:
@@ -724,11 +524,11 @@ namespace Poker
                     Suivre();
                     break;
 
-                case 8:
-                    Mise_();
-                    break;
-
             }
         }
+        /* // MISE
+         * ==========
+         *  
+         */
     }
 }
